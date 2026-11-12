@@ -1,0 +1,20 @@
+name: Verify imported source metadata
+on:
+  push:
+    branches:
+      - main
+      - 'import/**'
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify-import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out source without persisted credentials
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # verified upstream v4 tag
+        with:
+          persist-credentials: false
+      - name: Verify provenance, attribution, workflow isolation and display labels
+        run: python3 tools/verify_import.py

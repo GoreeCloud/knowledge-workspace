@@ -1,0 +1,15 @@
+{
+  "project": "GoreeCloud Knowledge Workspace",
+  "import_type": "attributed source snapshot (rebranded import)",
+  "upstream_repository": "https://github.com/AppFlowy-IO/AppFlowy",
+  "upstream_ref": "refs/heads/main",
+  "upstream_sha": "8fcee27d9bd93aad4ee0191d5d8d915d6a9a4e93",
+  "upstream_commit_date": "2026-10-28T06:07:24Z",
+  "import_date": "2026-11-12",
+  "upstream_license": "AGPL-3.0",
+  "upstream_readme_sha256": "10eb6aceebe3dba3912464e5bfaa72195c7e3697cb3f7670409880e697a12ec5",
+  "upstream_license_sha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef",
+  "upstream_tracked_files": 4597,
+  "upstream_workflows_archived": 12,
+  "status": "development baseline; full rebranding, security review, builds and deployment not yet verified"
+}
