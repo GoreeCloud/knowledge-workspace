@@ -18,5 +18,7 @@ jobs:
           persist-credentials: false
       - name: Verify provenance, attribution, workflow isolation and display labels
         run: python3 tools/verify_import.py
-      - name: Verify product display identity contracts
-        run: python3 -m unittest discover -s tools/tests -p test_brand_surfaces.py -v
+      - name: Verify all imported upstream source digests
+        run: python3 tools/source_integrity.py verify
+      - name: Verify source-integrity and product identity contracts
+        run: python3 -m unittest discover -s tools/tests -p test_*.py -v

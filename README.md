@@ -28,6 +28,7 @@ No integrations with GoreeCloud Identity, Mesh, GoreeShield or Wardveil have bee
 - Original upstream build guidance: [Flutter README](frontend/appflowy_flutter/README.md) and [UPSTREAM_README.md](UPSTREAM_README.md)
 - Import details and update procedure: [UPSTREAM.md](UPSTREAM.md)
 - Static import validator: run python3 tools/verify_import.py
+- Whole-import file integrity check: run python3 tools/source_integrity.py verify; see [Source integrity guide](docs/SOURCE_INTEGRITY.md).
 
 **Security:** Inherited upstream GitHub Actions are archived under .github/upstream-workflows-disabled/ so release, publishing, messaging and credential-dependent automations do not run in this repository without independent review. The only active workflow is the minimal, read-only import validator.
 

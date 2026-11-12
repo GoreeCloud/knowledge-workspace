@@ -37,3 +37,7 @@ The original upstream license file and existing additional component licenses an
 ## GoreeCloud ecosystem design intent
 
 GoreeCloud UI owns design language; GoreeCloud Mesh owns interoperability; GoreeCloud Identity owns authentication; GoreeShield owns privacy and consent; Wardveil owns cybersecurity and incident response. These are *planned integration boundaries*, not claims of implemented connectivity.
+
+## Imported source integrity gate
+
+The machine-readable file registry at .goreecloud/upstream-source-digests.json records SHA-256 digests for all 4,597 upstream files, with mapped paths and reviewed rebranding changes. Run python3 tools/source_integrity.py verify to check file presence and reviewed import digests. The validator is offline and read-only; it does not certify the absence of malicious code. Consult docs/SOURCE_INTEGRITY.md before revising any imported file checksum.
