@@ -6,9 +6,9 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [lib]
 name = "dart_ffi"
-# this value will change depending on the target os
-# default static library
-crate-type = ["staticlib"]
+# Preserve the static library for existing platforms and produce the Linux
+# shared library required by frontend/appflowy_flutter/linux/CMakeLists.txt.
+crate-type = ["staticlib", "cdylib"]
 
 
 [dependencies]

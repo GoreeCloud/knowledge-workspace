@@ -1,4 +1,5 @@
 import struct
+import tomllib
 import sys
 import tempfile
 import unittest
@@ -22,6 +23,13 @@ def fixture(root):
 
 
 class NativeBundlePreflight(unittest.TestCase):
+    def test_rust_ffi_exports_static_and_shared_library_types(self):
+        rust_crate = APP.parent / "rust-lib/dart-ffi/Cargo.toml"
+        manifest = tomllib.loads(rust_crate.read_text(encoding="utf-8"))
+        self.assertEqual(manifest["lib"]["name"], "dart_ffi")
+        self.assertEqual(set(manifest["lib"]["crate-type"]), {"staticlib", "cdylib"})
+        self.assertEqual(manifest["package"]["name"], "dart-ffi")
+
     def test_imported_source_not_mistaken_for_runnable(self):
         x = report(APP)
         self.assertEqual(x["status"], "incomplete")
