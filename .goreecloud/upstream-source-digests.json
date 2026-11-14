@@ -2676,7 +2676,7 @@
       "source_path": "frontend/appflowy_flutter/lib/env/cloud_env.dart",
       "import_path": "frontend/appflowy_flutter/lib/env/cloud_env.dart",
       "upstream_sha256": "e33bce9d768954a8da956e3d09bddbdca33427d20e1d1d6e967a66ce1e7ff5a1",
-      "import_sha256": "e33bce9d768954a8da956e3d09bddbdca33427d20e1d1d6e967a66ce1e7ff5a1"
+      "import_sha256": "37eeb545e7aa3f80c6fe737b39ef81aacab02669564db8c3e1ec130b8a1872c2"
     },
     {
       "source_path": "frontend/appflowy_flutter/lib/env/cloud_env_test.dart",
@@ -9006,7 +9006,7 @@
       "source_path": "frontend/appflowy_flutter/lib/startup/deps_resolver.dart",
       "import_path": "frontend/appflowy_flutter/lib/startup/deps_resolver.dart",
       "upstream_sha256": "c259bab5e7ffaa79007cb1a9bb7fc2bdd2b519813a8d9b57f14a125da64f0b37",
-      "import_sha256": "c259bab5e7ffaa79007cb1a9bb7fc2bdd2b519813a8d9b57f14a125da64f0b37"
+      "import_sha256": "f49ce1bb306a829233781c2d51743286cd8f4273930e2c2099a8dd6b5b6aad96"
     },
     {
       "source_path": "frontend/appflowy_flutter/lib/startup/entry_point.dart",

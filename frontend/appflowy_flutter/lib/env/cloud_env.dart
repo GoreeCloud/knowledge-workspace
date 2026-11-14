@@ -53,13 +53,19 @@ const String kAppflowyCloudUrl = "https://beta.appflowy.cloud";
 ///
 Future<AuthenticatorType> getAuthenticatorType() async {
   final value = await getIt<KeyValueStorage>().get(KVKeys.kCloudType);
-  if (value == null && !integrationMode().isUnitTest) {
-    // if the cloud type is not set, then set it to AppFlowy Cloud as default.
-    await useAppFlowyBetaCloudWithURL(
-      kAppflowyCloudUrl,
-      AuthenticatorType.appflowyCloud,
-    );
-    return AuthenticatorType.appflowyCloud;
+  if (value == null) {
+    // Honor an explicitly configured build-time cloud endpoint, but never
+    // treat the inherited AUTHENTICATOR_TYPE=2 default as user consent.
+    final configuredType = AuthenticatorType.fromValue(Env.authenticatorType);
+    if (Env.afCloudUrl.isNotEmpty && configuredType.isAppFlowyCloudEnabled) {
+      return configuredType;
+    }
+    // GoreeShield local-first: a new profile must not silently opt into
+    // AppFlowy's upstream beta cloud. Preserve explicit stored selections.
+    if (!integrationMode().isUnitTest) {
+      await useLocalServer();
+    }
+    return AuthenticatorType.local;
   }
 
   switch (value ?? "0") {
@@ -72,11 +78,10 @@ Future<AuthenticatorType> getAuthenticatorType() async {
     case "4":
       return AuthenticatorType.appflowyCloudDevelop;
     default:
-      await useAppFlowyBetaCloudWithURL(
-        kAppflowyCloudUrl,
-        AuthenticatorType.appflowyCloud,
-      );
-      return AuthenticatorType.appflowyCloud;
+      // Treat an unknown stored value as local rather than enabling an
+      // unapproved remote service. Do not alter a valid saved cloud choice.
+      await useLocalServer();
+      return AuthenticatorType.local;
   }
 }
 
@@ -242,8 +247,9 @@ class AppFlowyCloudSharedEnv {
 
   @override
   String toString() {
-    return 'authenticator: $_authenticatorType\n'
-        'appflowy: ${appflowyCloudConfig.toJson()}\n';
+    // Do not accidentally expose private self-hosted endpoints or credentials
+    // when diagnostic code interpolates this configuration.
+    return 'authenticator: $_authenticatorType';
   }
 }
 
@@ -301,7 +307,10 @@ Future<AppFlowyCloudConfiguration> getAppFlowyCloudConfig(
 Future<String> getAppFlowyCloudUrl() async {
   final result =
       await getIt<KeyValueStorage>().get(KVKeys.kAppflowyCloudBaseURL);
-  return result ?? kAppflowyCloudUrl;
+  // Respect a reviewed, explicitly configured deployment URL. Existing saved
+  // server choices take priority; inherited beta URL is only for explicitly
+  // selected legacy AppFlowy cloud modes without a configured URL.
+  return result ?? (Env.afCloudUrl.isNotEmpty ? Env.afCloudUrl : kAppflowyCloudUrl);
 }
 
 Future<String> getAppFlowyShareDomain() async {
