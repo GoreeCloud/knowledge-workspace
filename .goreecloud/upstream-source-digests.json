@@ -16092,13 +16092,13 @@
       "source_path": "frontend/appflowy_flutter/pubspec.lock",
       "import_path": "frontend/appflowy_flutter/pubspec.lock",
       "upstream_sha256": "742502157e45b56a05bc6f30f48f411930cfc28aa7d413fa4379b1c6037c5eb4",
-      "import_sha256": "742502157e45b56a05bc6f30f48f411930cfc28aa7d413fa4379b1c6037c5eb4"
+      "import_sha256": "0b70ceb9ee5af9be6a7d9163c2291176ac4b7906ad7a2970a2fffd1c2ab590b0"
     },
     {
       "source_path": "frontend/appflowy_flutter/pubspec.yaml",
       "import_path": "frontend/appflowy_flutter/pubspec.yaml",
       "upstream_sha256": "e5f327b14395e8e1c1657d4097e6615d822609cb4aebf46bb59876bc279618f0",
-      "import_sha256": "46cd1425e3a2f1a1df5e404591e8ab549f8680b5cf5c6b770661989159701054"
+      "import_sha256": "f800c2041ffb0c8731bb396e5aa3200d6ace5670e8bcf45f59bee5ca349aea8c"
     },
     {
       "source_path": "frontend/appflowy_flutter/test/bloc_test/ai_writer_test/ai_writer_bloc_test.dart",

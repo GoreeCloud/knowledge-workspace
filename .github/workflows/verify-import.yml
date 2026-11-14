@@ -22,6 +22,8 @@ jobs:
         run: python3 tools/source_integrity.py verify
       - name: Check developer toolchain pins without installing SDKs
         run: python3 tools/check_development_toolchains.py --json
+      - name: Verify compatibility-pinned Flutter Git override revisions
+        run: python3 tools/verify_flutter_git_overrides.py
       - name: Verify reviewed static HTTP(S) hostname references
         run: python3 tools/network_reference_audit.py verify
       - name: Verify source-integrity and product identity contracts
