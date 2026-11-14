@@ -21486,13 +21486,13 @@
       "source_path": "frontend/rust-lib/Cargo.lock",
       "import_path": "frontend/rust-lib/Cargo.lock",
       "upstream_sha256": "fa1443b904d6063ec07c79291e387573fcc1242020d36796465ad06c194bf1c1",
-      "import_sha256": "fa1443b904d6063ec07c79291e387573fcc1242020d36796465ad06c194bf1c1"
+      "import_sha256": "c313cee191c4c8ea6c6259596690e71f31b9929f7f1b9654ebba55921c816680"
     },
     {
       "source_path": "frontend/rust-lib/Cargo.toml",
       "import_path": "frontend/rust-lib/Cargo.toml",
       "upstream_sha256": "4cc217eeb51f8f7d537201774a54de5c185e7afb0193a7ec6c1cbd3b88b68edf",
-      "import_sha256": "4cc217eeb51f8f7d537201774a54de5c185e7afb0193a7ec6c1cbd3b88b68edf"
+      "import_sha256": "fb6bd05e6574bab4366ca081b0d544a2a7fd1a2f1d4eee3eb707db0db283655e"
     },
     {
       "source_path": "frontend/rust-lib/build-tool/flowy-ast/Cargo.toml",
