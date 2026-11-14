@@ -4,7 +4,7 @@
 
 GoreeCloud Knowledge Workspace is an **AppFlowy-derived** open-source knowledge, document, wiki and project workspace maintained under the GoreeCloud name. This repository contains a source snapshot of the latest verified AppFlowy upstream main as of November 12, 2026, with initial user-facing display-name changes and explicit upstream attribution.
 
-> **Status:** Source imported for development. The complete user interface, icons, online services, account flows, builds, migrations, security posture and deployment have not been verified or fully rebranded. Do not use this snapshot as evidence of a production-ready GoreeCloud service.
+> **Status:** Source imported for development. A controlled Linux debug build and isolated virtual-display launch have been verified (November 13, 2026), but production UI, icons, account flows, security and privacy, non-Linux builds, migrations and deployment have not. Do not use this snapshot as evidence of a production-ready GoreeCloud service.
 
 ## Source and license
 
@@ -48,4 +48,4 @@ Contributions must retain applicable copyright and attribution, and comply with 
 
 ## Isolated Linux development build readiness
 
-The imported application requires generated Dart and Rust-backed files not committed in this repository. Run python3 tools/generated_source_preflight.py --json for a read-only inventory, and add --strict only after reviewed generators have completed in a disposable environment. See docs/ISOLATED_LINUX_BUILD.md. Import-metadata CI is not evidence of a complete application build, security certification, or deployment.
+The imported application requires generated Dart and Rust-backed files not committed in this repository. Run python3 tools/generated_source_preflight.py --json for a read-only inventory, and add --strict only after reviewed generators have completed in a disposable environment. A separately recorded, rootless, network-disabled Linux debug build and an isolated headless window startup passed on November 13, 2026. See docs/ISOLATED_LINUX_BUILD.md for the exact limits. Import-metadata CI does not run that full native build or certify security, features, or deployment.
