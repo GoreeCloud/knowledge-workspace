@@ -4097,7 +4097,7 @@ dependencies = [
 [[package]]
 name = "langchain-rust"
 version = "4.6.0"
-source = "git+https://github.com/appflowy/langchain-rust?branch=af#9a319193352331fa4e5ff1dd4de43a0fbc5d0cbd"
+source = "git+https://github.com/appflowy/langchain-rust?rev=9a319193352331fa4e5ff1dd4de43a0fbc5d0cbd#9a319193352331fa4e5ff1dd4de43a0fbc5d0cbd"
 dependencies = [
  "async-openai",
  "async-recursion",
