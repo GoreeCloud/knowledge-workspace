@@ -30,6 +30,7 @@ No integrations with GoreeCloud Identity, Mesh, GoreeShield or Wardveil have bee
 - Static import validator: run python3 tools/verify_import.py
 - Whole-import file integrity check: run python3 tools/source_integrity.py verify; see [Source integrity guide](docs/SOURCE_INTEGRITY.md).
 - Static network-reference review: run python3 tools/network_reference_audit.py verify (or report); see [Network reference audit](docs/NETWORK_REFERENCE_AUDIT.md). This does not enforce egress restrictions.
+- Developer toolchain preflight: run python3 tools/check_development_toolchains.py --json (add --local on a configured Linux workstation); see [development toolchains](docs/DEVELOPMENT_TOOLCHAINS.md).
 
 **Security:** Inherited upstream GitHub Actions are archived under .github/upstream-workflows-disabled/ so release, publishing, messaging and credential-dependent automations do not run in this repository without independent review. The only active workflow is the minimal, read-only import validator.
 
