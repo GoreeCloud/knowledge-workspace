@@ -34,3 +34,23 @@ An isolated Dart acquisition completed with the original lockfile. All **294** h
 The full application build progressed through the Linux native plugin configuration and Dart compiler, but failed on missing generated sources. The SVG and localization generators generated three Dart files in scratch, and the official Protobuf plugin version **21.1.2**, specified by the inherited build script, passed a network-isolated protoc smoke test. Rust 1.85.0 successfully compiled an isolated flowy-ast target and a narrowly scoped first-party flowy-error protobuf generator; the latter wrote nine backend Dart files in scratch. A bounded all-package Freezed generator attempt processed thousands of actions but did not finish or commit output files before timeout.
 
 **No complete application binary has been built, launched, signed or deployed.** None of these checks proves that third-party source is free of malware, license-compatible, or that GoreeCloud privacy and security policies have been enforced in the imported application.
+
+## Linux native-library acceptance before launch
+
+The Linux CMake source requires linux/flutter/dart_ffi/libdart_ffi.so
+and bundles that file alongside Flutter's libflutter_linux_gtk.so. The imported
+frontend/rust-lib/dart-ffi/Cargo.toml currently specifies staticlib, so a
+reviewed scratch-only shared-library adaptation is required before installing
+or launching the Linux bundle. Do not silently alter its Cargo manifest.
+
+Inspect the source contract and the required native file without executing ELF:
+
+    python3 tools/check_linux_ffi_bundle.py --json
+
+After generating the native library in disposable storage, use --strict to
+reject missing native files or invalid ELF64 x86_64 headers. Pass --bundle
+with an assembled debug-bundle path under the application root to check
+that the executable, native FFI and Flutter GTK libraries, and Flutter asset
+directory are structurally present. This is not an exported-symbol, ABI,
+dynamic-dependency, security, network, privacy or license attestation.
+Use an isolated native-library audit and runtime validation before release.
