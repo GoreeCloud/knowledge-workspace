@@ -41,6 +41,11 @@ def main() -> None:
     require(f'L"{BRAND}"' in text("frontend/appflowy_flutter/windows/runner/main.cpp"), "Windows initial window title")
     require(f"Name={BRAND}" in text("frontend/scripts/linux_distribution/deb/AppFlowy.desktop"), "Linux display name")
     require(
+        "if (value == null) {" in text("frontend/appflowy_flutter/lib/env/cloud_env.dart")
+        and "await useLocalServer();" in text("frontend/appflowy_flutter/lib/env/cloud_env.dart"),
+        "new profiles choose local cloud mode rather than upstream beta",
+    )
+    require(
         "static const String? _feedUrl = null;" in text("frontend/appflowy_flutter/lib/startup/tasks/auto_update_task.dart"),
         "inherited release feed disabled by default",
     )

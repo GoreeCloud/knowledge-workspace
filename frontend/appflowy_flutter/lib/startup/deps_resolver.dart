@@ -60,7 +60,9 @@ class DependencyResolver {
 
 Future<void> _resolveCloudDeps(GetIt getIt) async {
   final env = await AppFlowyCloudSharedEnv.fromEnv();
-  Log.info("cloud setting: $env");
+  // Cloud configuration may contain private self-hosted URLs or other
+  // deployment metadata; only log the non-sensitive selected mode.
+  Log.info('cloud mode: ${env.authenticatorType}');
   getIt.registerFactory<AppFlowyCloudSharedEnv>(() => env);
   getIt.registerFactory<AIRepository>(() => AppFlowyAIService());
 
