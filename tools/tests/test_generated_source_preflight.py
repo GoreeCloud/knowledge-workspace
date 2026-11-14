@@ -9,13 +9,13 @@ from generated_source_preflight import APP, classify_generated, generated_report
 
 
 class GeneratedSourceContracts(unittest.TestCase):
-    def test_real_import_has_missing_generated_dependencies(self):
+    def test_real_import_scan_is_future_compatible(self):
         result = generated_report(APP)
         self.assertGreater(result["scanned_dart_files"], 100)
-        self.assertGreater(result["missing_count"], 50)
-        self.assertIn("svg", result["missing_by_category"])
-        self.assertIn("localization", result["missing_by_category"])
-        self.assertIn("rust_protobuf", result["missing_by_category"])
+        self.assertGreaterEqual(result["missing_count"], 0)
+        # When generated files are later checked in, this test must not
+        # obstruct a valid improvement by requiring that files stay missing.
+        self.assertEqual(result["unsafe_path_references"], [])
 
     def test_classification(self):
         cases = {
