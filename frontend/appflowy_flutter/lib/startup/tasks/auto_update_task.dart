@@ -17,16 +17,18 @@ import '../startup.dart';
 class AutoUpdateTask extends LaunchTask {
   AutoUpdateTask();
 
-  static const _feedUrl =
-      'https://github.com/AppFlowy-IO/AppFlowy/releases/latest/download/appcast-{os}-{arch}.xml';
+  // No GoreeCloud-owned and verified update feed exists for this import.
+  // Default to no automatic outbound update request until one is approved.
+  static const String? _feedUrl = null;
   final _listener = _AppFlowyAutoUpdaterListener();
 
   @override
   Future<void> initialize(LaunchContext context) async {
     await super.initialize(context);
 
-    // the auto updater is not supported on mobile
-    if (UniversalPlatform.isMobile) {
+    // No verified GoreeCloud release channel exists. Do not contact the
+    // imported upstream service or show a blocking critical-update prompt.
+    if (UniversalPlatform.isMobile || _feedUrl == null) {
       return;
     }
 
@@ -57,7 +59,11 @@ class AutoUpdateTask extends LaunchTask {
     );
 
     // Since the appcast.xml is not supported the arch, we separate the feed url by os and arch.
-    final feedUrl = _feedUrl
+    final feedUrlTemplate = _feedUrl;
+    if (feedUrlTemplate == null) {
+      return;
+    }
+    final feedUrl = feedUrlTemplate
         .replaceAll('{os}', ApplicationInfo.os)
         .replaceAll('{arch}', ApplicationInfo.architecture);
 

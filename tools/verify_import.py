@@ -40,6 +40,14 @@ def main() -> None:
     require(BRAND in text("frontend/appflowy_flutter/windows/runner/Runner.rc"), "Windows product display name")
     require(f'L"{BRAND}"' in text("frontend/appflowy_flutter/windows/runner/main.cpp"), "Windows initial window title")
     require(f"Name={BRAND}" in text("frontend/scripts/linux_distribution/deb/AppFlowy.desktop"), "Linux display name")
+    require(
+        "static const String? _feedUrl = null;" in text("frontend/appflowy_flutter/lib/startup/tasks/auto_update_task.dart"),
+        "inherited release feed disabled by default",
+    )
+    require(
+        "https://appflowy.com/download" not in text("frontend/appflowy_flutter/lib/shared/version_checker/version_checker.dart"),
+        "inherited manual update redirect disabled",
+    )
     require(f'gtk_window_set_title(window, "{BRAND}");' in text("frontend/appflowy_flutter/linux/my_application.cc"), "Linux initial window title")
     active = sorted(p.name for p in (ROOT / ".github/workflows").glob("*") if p.is_file())
     require(active == ["verify-import.yml"], "inherited automatic workflow execution disabled")

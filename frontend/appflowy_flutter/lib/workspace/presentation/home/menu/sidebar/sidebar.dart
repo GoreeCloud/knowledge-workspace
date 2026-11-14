@@ -493,6 +493,9 @@ class _SidebarState extends State<_Sidebar> {
   }
 
   Widget _buildUpgradeApplicationButton(EdgeInsets menuHorizontalInset) {
+    if (!versionChecker.hasConfiguredUpdateFeed) {
+      return const SizedBox.shrink();
+    }
     return ValueListenableBuilder(
       valueListenable: _muteUpdateButton,
       builder: (_, mute, child) {

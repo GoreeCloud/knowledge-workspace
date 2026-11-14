@@ -1,4 +1,3 @@
-import 'package:appflowy/core/helpers/url_launcher.dart';
 import 'package:appflowy/startup/tasks/device_info_task.dart';
 import 'package:appflowy_backend/log.dart';
 import 'package:auto_updater/auto_updater.dart';
@@ -17,6 +16,8 @@ class VersionChecker {
   String? _feedUrl;
 
   static final VersionChecker _instance = VersionChecker._internal();
+
+  bool get hasConfiguredUpdateFeed => _feedUrl != null;
 
   /// Sets the appcast XML feed URL
   void setFeedUrl(String url) {
@@ -60,16 +61,20 @@ class VersionChecker {
     return null;
   }
 
-  /// For Windows and macOS, calling this API will trigger the auto updater to check for updates
-  /// For Linux, it will open the official website in the browser if there is a new version
+  /// Check only a configured update channel. Linux downloads remain disabled
+  /// until a verified GoreeCloud release destination is approved.
 
   Future<void> checkForUpdate() async {
-    if (UniversalPlatform.isLinux) {
-      // open the official website in the browser
-      await afLaunchUrlString('https://appflowy.com/download');
-    } else {
-      await autoUpdater.checkForUpdates();
+    if (!hasConfiguredUpdateFeed) {
+      Log.info('GoreeCloud update feed is not configured');
+      return;
     }
+    if (UniversalPlatform.isLinux) {
+      // Linux downloads require a separately approved GoreeCloud release URL.
+      Log.info('GoreeCloud Linux update destination is not configured');
+      return;
+    }
+    await autoUpdater.checkForUpdates();
   }
 
   AppcastItem? _parseAppcastItem(xml.XmlElement item) {
