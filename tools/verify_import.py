@@ -40,6 +40,7 @@ def main() -> None:
     require(BRAND in text("frontend/appflowy_flutter/windows/runner/Runner.rc"), "Windows product display name")
     require(f'L"{BRAND}"' in text("frontend/appflowy_flutter/windows/runner/main.cpp"), "Windows initial window title")
     require(f"Name={BRAND}" in text("frontend/scripts/linux_distribution/deb/AppFlowy.desktop"), "Linux display name")
+    require(f'gtk_window_set_title(window, "{BRAND}");' in text("frontend/appflowy_flutter/linux/my_application.cc"), "Linux initial window title")
     active = sorted(p.name for p in (ROOT / ".github/workflows").glob("*") if p.is_file())
     require(active == ["verify-import.yml"], "inherited automatic workflow execution disabled")
     archived = sorted(p for p in (ROOT / ".github/upstream-workflows-disabled").iterdir() if p.is_file())

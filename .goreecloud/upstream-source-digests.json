@@ -11586,7 +11586,7 @@
       "source_path": "frontend/appflowy_flutter/linux/my_application.cc",
       "import_path": "frontend/appflowy_flutter/linux/my_application.cc",
       "upstream_sha256": "3875d2a87da1ce89e9a231bd36e273811b4a084090f9c1f106b920a9bd27937c",
-      "import_sha256": "3875d2a87da1ce89e9a231bd36e273811b4a084090f9c1f106b920a9bd27937c"
+      "import_sha256": "49ab5dd44a28383b4094fa457be1a29a6541031250acd29d43ae5308b6c28ce8"
     },
     {
       "source_path": "frontend/appflowy_flutter/linux/my_application.h",
