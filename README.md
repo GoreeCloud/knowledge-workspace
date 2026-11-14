@@ -43,3 +43,7 @@ No integrations with GoreeCloud Identity, Mesh, GoreeShield or Wardveil have bee
 5. Define deployment, backup, recovery, upstream-update and maintenance procedures before release.
 
 Contributions must retain applicable copyright and attribution, and comply with the AGPL-3.0 and any additional per-component terms.
+
+## Isolated Linux development build readiness
+
+The imported application requires generated Dart and Rust-backed files not committed in this repository. Run python3 tools/generated_source_preflight.py --json for a read-only inventory, and add --strict only after reviewed generators have completed in a disposable environment. See docs/ISOLATED_LINUX_BUILD.md. Import-metadata CI is not evidence of a complete application build, security certification, or deployment.
