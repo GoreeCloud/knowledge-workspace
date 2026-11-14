@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "scope": "five-first-party-code-generator-source-files",
+  "upstream_revision": "8fcee27d9bd93aad4ee0191d5d8d915d6a9a4e93",
+  "disclaimer": "A change detection gate only; no execution, no transitive source verification.",
+  "files": [
+    {
+      "path": "frontend/rust-lib/build-tool/flowy-codegen/src/dart_event/dart_event.rs",
+      "sha256": "c7cc146768f820acfc37ceb7fe025536bfcaa7c7672cbc6929a243c797cf5c97"
+    },
+    {
+      "path": "frontend/rust-lib/build-tool/flowy-codegen/src/protobuf_file/mod.rs",
+      "sha256": "1eb161f8805151fa95d8359cf0e4d8f9851259ef8c59cde7a174ebe10eb52690"
+    },
+    {
+      "path": "frontend/rust-lib/build-tool/flowy-codegen/src/protobuf_file/proto_gen.rs",
+      "sha256": "ee03a0588b23380a81b8c2f1c0ab85ead15d1cb474907a3f1a432f4ada7b4a04"
+    },
+    {
+      "path": "frontend/rust-lib/build-tool/flowy-codegen/src/protobuf_file/proto_info.rs",
+      "sha256": "328d37933570e9b931197e4dc2ccdd447d161af163fb88fb69da48ca34f3dd3a"
+    },
+    {
+      "path": "frontend/rust-lib/build-tool/flowy-codegen/src/util.rs",
+      "sha256": "fd73748981c79d183c922a3efeb72adf69434b7f17a67dccd385cc73110764df"
+    }
+  ]
+}

@@ -28,6 +28,8 @@ jobs:
         run: python3 tools/verify_rust_git_locks.py
       - name: Verify Dart and Cargo lockfile source identities offline
         run: python3 tools/dependency_lock_inventory.py verify
+      - name: Verify inherited Rust generator output source snapshots
+        run: python3 tools/codegen_output_review.py verify
       - name: Verify reviewed static HTTP(S) hostname references
         run: python3 tools/network_reference_audit.py verify
       - name: Verify source-integrity and product identity contracts
