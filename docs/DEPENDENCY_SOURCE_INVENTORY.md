@@ -16,3 +16,13 @@ For each future lockfile change, review source origins, exact commit/revision, n
 The application does NOT yet have a verified complete third-party artifact inventory, dependency-license compatibility, executable build script review, offline build under enforced OS network restrictions, signed artifact, or runtime privacy acceptance. The existence of a lockfile checksum only expresses the expected artifact checksum and must never be treated as proof that the artifact was independently acquired and verified.
 
 Special note: Dart Pub offline mode was observed to attempt a Git clone when Git dependency cache was missing. A network namespace self-test of a stricter workstation sandbox was blocked by the workstation's execution safeguards; no verified complete network isolation is claimed. Do not use this audit alone as a sandbox.
+
+## Third-party Rust executable hook provenance
+
+This lockfile inventory is not a source/code inspection. The separate
+read-only Cargo archive/source comparator and limits are documented in
+[Third-party Rust hook provenance](THIRD_PARTY_RUST_HOOK_PROVENANCE.md).
+Its development-cache scan matched 654 locked registry archives and 79
+build-script sources, but 114 locked packages lacked cached source and no
+package behavior was certified safe. CI only checks the lockfile and scanner
+fixtures, not complete dependency-source availability.
