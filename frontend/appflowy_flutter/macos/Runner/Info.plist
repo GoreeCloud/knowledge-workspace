@@ -22,7 +22,7 @@
 			<string>zh</string>
 		</array>
 		<key>CFBundleDisplayName</key>
-		<string>GoreeCloud Knowledge Workspace</string>
+		<string>GoreeCloud Noteflow</string>
 		<key>CFBundleName</key>
 		<string>$(PRODUCT_NAME)</string>
 		<key>CFBundlePackageType</key>

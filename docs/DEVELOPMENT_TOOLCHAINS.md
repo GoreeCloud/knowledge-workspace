@@ -1,6 +1,6 @@
 # Development toolchain preflight — Linux
 
-**Scope:** Developer workstation setup for the AppFlowy-derived GoreeCloud Knowledge Workspace. Passing these checks does not establish that the full application builds, runs or is ready for release.
+**Scope:** Developer workstation setup for the AppFlowy-derived GoreeCloud Noteflow. Passing these checks does not establish that the full application builds, runs or is ready for release.
 
 ## Verified source constraints
 

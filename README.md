@@ -1,8 +1,13 @@
-# GoreeCloud Knowledge Workspace
+# GoreeCloud Noteflow
 
 **Development baseline · Rebranded Import · Not production-ready**
 
-GoreeCloud Knowledge Workspace is an **AppFlowy-derived** open-source knowledge, document, wiki and project workspace maintained under the GoreeCloud name. This repository contains a source snapshot of the latest verified AppFlowy upstream main as of November 12, 2026, with initial user-facing display-name changes and explicit upstream attribution.
+**Canonical repository:** https://github.com/GoreeCloud/noteflow. Formerly GoreeCloud Knowledge Workspace in the same GitHub repository; its GitHub ID and history are preserved.
+The founder's November 14, 2026 rename changed the public product name,
+not the inherited application's package, database, protocol or executable
+identifiers. See [Noteflow rename and migration contract](docs/PRODUCT_RENAME_NOTEFLOW.md).
+
+GoreeCloud Noteflow is an **AppFlowy-derived** open-source knowledge, document, wiki and project workspace maintained under the GoreeCloud name. This repository contains a source snapshot of the latest verified AppFlowy upstream main as of November 12, 2026, with initial user-facing display-name changes and explicit upstream attribution.
 
 > **Status:** Source imported for development. A controlled Linux debug build and isolated virtual-display launch have been verified (November 13, 2026), but production UI, icons, account flows, security and privacy, non-Linux builds, migrations and deployment have not. Do not use this snapshot as evidence of a production-ready GoreeCloud service.
 
@@ -17,9 +22,9 @@ GoreeCloud Knowledge Workspace is an **AppFlowy-derived** open-source knowledge,
 
 ## Included baseline
 
-The inherited source includes Flutter client code and Rust components for a multi-platform workspace. Initial **GoreeCloud Knowledge Workspace** display naming is applied to select Android, iOS, macOS, Windows, Linux desktop-entry/window title and web manifest/title surfaces. Internal package IDs, database formats, deep links, binary names and third-party integrations remain at their inherited values pending compatibility review. The upstream graphics and localized application strings may still say AppFlowy.
+The inherited source includes Flutter client code and Rust components for a multi-platform workspace. Initial **GoreeCloud Noteflow** display naming is applied to select Android, iOS, macOS, Windows, Linux desktop-entry/window title and web manifest/title surfaces. Internal package IDs, database formats, deep links, binary names and third-party integrations remain at their inherited values pending compatibility review. The upstream graphics and localized application strings may still say AppFlowy.
 
-**First-use privacy default:** When no cloud mode is saved, Knowledge Workspace selects local mode rather than the inherited AppFlowy beta cloud, unless an explicit build-time cloud endpoint was configured. Existing saved cloud selections remain supported. See [local-first cloud policy](docs/LOCAL_FIRST_CLOUD_PRIVACY.md). This is not a complete network-privacy audit.
+**First-use privacy default:** When no cloud mode is saved, Noteflow selects local mode rather than the inherited AppFlowy beta cloud, unless an explicit build-time cloud endpoint was configured. Existing saved cloud selections remain supported. See [local-first cloud policy](docs/LOCAL_FIRST_CLOUD_PRIVACY.md). This is not a complete network-privacy audit.
 
 **Privacy and release notice:** The imported AppFlowy startup update feed and manual Linux download redirect are disabled by default. No verified GoreeCloud release feed or signed update channel is configured; the About panel displays only the locally installed version without claiming it is up to date. Other imported network clients remain unaudited. See [Update source and privacy](docs/UPDATE_SOURCE_PRIVACY.md).
 

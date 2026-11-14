@@ -1,11 +1,11 @@
 {
-    "name": "GoreeCloud Knowledge Workspace",
-    "short_name": "GoreeCloud Workspace",
+    "name": "GoreeCloud Noteflow",
+    "short_name": "Noteflow",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "AppFlowy-derived notes, documents and projects development client.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

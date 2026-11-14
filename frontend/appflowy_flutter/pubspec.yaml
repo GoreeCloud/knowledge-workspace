@@ -1,5 +1,5 @@
 name: appflowy
-description: "GoreeCloud Knowledge Workspace, an AppFlowy-derived open-source workspace."
+description: "GoreeCloud Noteflow, an AppFlowy-derived open-source workspace."
 publish_to: "none"
 
 version: 0.11.4

@@ -1,5 +1,7 @@
 # Linux connectivity monitoring without system D-Bus
 
+> Product rename note (November 14, 2026): This recorded development test predated the official GoreeCloud Noteflow name. Historical window-title observations below are preserved; current code must be rebuilt and retested under the new identity.
+
 **Scope:** Flutter desktop network status monitoring; not network egress policy.
 
 The inherited NetworkListener on Linux uses connectivity_plus to observe

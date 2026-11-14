@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=GoreeCloud Knowledge Workspace
+Name=GoreeCloud Noteflow
 Icon=/usr/share/icons/hicolor/scalable/apps/appflowy.svg
 Exec=/usr/bin/AppFlowy %U
 Categories=Network;Productivity;

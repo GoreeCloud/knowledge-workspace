@@ -1,5 +1,7 @@
 # Isolated Linux build acceptance — imported Knowledge Workspace
 
+> Product rename note (November 14, 2026): This recorded development test predated the official GoreeCloud Noteflow name. Historical window-title observations below are preserved; current code must be rebuilt and retested under the new identity.
+
 **Status: controlled Linux debug build and isolated window startup verified; no production release acceptance.** This imported source omits generated Dart and Rust-backed inputs by default; those were produced in a reviewed disposable workspace. Other platforms, feature behavior and production readiness remain unverified.
 
 ## Inspect generated source requirements

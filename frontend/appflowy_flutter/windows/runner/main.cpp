@@ -9,23 +9,31 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
                       _In_ wchar_t *command_line, _In_ int show_command)
 {
   HANDLE hMutexInstance = CreateMutex(NULL, TRUE, L"AppFlowyMutex");
-  HWND handle = FindWindowA(NULL, "GoreeCloud Knowledge Workspace";
+  // Capture the mutex status before looking up the window: FindWindowA may
+  // change GetLastError(), causing a duplicate process to be launched.
+  const DWORD mutex_status = GetLastError();
+  HWND handle = FindWindowA(NULL, "GoreeCloud Noteflow");
 
-  if (GetLastError() == ERROR_ALREADY_EXISTS)
+  if (hMutexInstance != nullptr && mutex_status == ERROR_ALREADY_EXISTS)
   {
     flutter::DartProject project(L"data");
     std::vector<std::string> command_line_arguments = GetCommandLineArguments();
     project.set_dart_entrypoint_arguments(std::move(command_line_arguments));
     FlutterWindow window(project);
-    if (window.SendAppLinkToInstance(L"GoreeCloud Knowledge Workspace"))
+    if (window.SendAppLinkToInstance(L"GoreeCloud Noteflow"))
     {
       return false;
     }
 
-    WINDOWPLACEMENT place = {sizeof(WINDOWPLACEMENT)};
-    GetWindowPlacement(handle, &place);
-    ShowWindow(handle, SW_NORMAL);
-    return 0;
+    // A running legacy process may use another title. A missing window must
+    // not be dereferenced while handling a compatibility-preserved mutex.
+    if (handle != nullptr)
+    {
+      WINDOWPLACEMENT place = {sizeof(WINDOWPLACEMENT)};
+      GetWindowPlacement(handle, &place);
+      ShowWindow(handle, SW_NORMAL);
+      return 0;
+    }
   }
 
   // Attach to console when present (e.g., 'flutter run') or create a
@@ -49,7 +57,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
   Win32Window::Point origin(10, 10);
   Win32Window::Size size(1280, 720);
 
-  if (!window.Create(L"GoreeCloud Knowledge Workspace", origin, size))
+  if (!window.Create(L"GoreeCloud Noteflow", origin, size))
   {
     return EXIT_FAILURE;
   }

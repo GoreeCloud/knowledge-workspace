@@ -390,7 +390,7 @@
       "source_path": "frontend/appflowy_flutter/android/app/src/main/AndroidManifest.xml",
       "import_path": "frontend/appflowy_flutter/android/app/src/main/AndroidManifest.xml",
       "upstream_sha256": "4523bbfa67a507c010056b2a875150011b8eefb3fc20bef94675c788d9d1b767",
-      "import_sha256": "e3903a64c881fc84dd741ea6b8a2a0fe487b1a2dd8d80c16c93d7516b01be190"
+      "import_sha256": "79f802723a728350571ee8360ea0798e6caa067b0c129582c37e225c9976dc5e"
     },
     {
       "source_path": "frontend/appflowy_flutter/android/app/src/main/CMakeLists.txt",
@@ -1044,7 +1044,7 @@
       "source_path": "frontend/appflowy_flutter/assets/translations/mr-IN.json",
       "import_path": "frontend/appflowy_flutter/assets/translations/mr-IN.json",
       "upstream_sha256": "acd07c20f366e68f9417bad07392b6e6dc8ed0452acb3a6ca173f35f1f19c1a8",
-      "import_sha256": "94bc852daf815823f1048b7d998239c71fd11f34c9c52d24ba2eb63f6f7f16ac"
+      "import_sha256": "9df299c481c90680c5f4e7b49ec22085a4acb3106a3781b5be99a1169092dc31"
     },
     {
       "source_path": "frontend/appflowy_flutter/build.yaml",
@@ -2376,7 +2376,7 @@
       "source_path": "frontend/appflowy_flutter/ios/Runner/Info.plist",
       "import_path": "frontend/appflowy_flutter/ios/Runner/Info.plist",
       "upstream_sha256": "882cc4c7685a9fa74d986909e791968f1a48ab04680fa96dcf071b98aa381ad9",
-      "import_sha256": "6fb17ab2fe6647c183e5875edd803b6212e5a210da11763f6aa92de4f00d6c83"
+      "import_sha256": "d251e118cc8051a3f81ac244a9f9b3f6f2f9004302ef987398335fce401110c7"
     },
     {
       "source_path": "frontend/appflowy_flutter/ios/Runner/Runner-Bridging-Header.h",
@@ -3564,7 +3564,7 @@
       "source_path": "frontend/appflowy_flutter/lib/mobile/presentation/home/mobile_home_page_header.dart",
       "import_path": "frontend/appflowy_flutter/lib/mobile/presentation/home/mobile_home_page_header.dart",
       "upstream_sha256": "fd53a35d1679458f55359534930408f505f9d00c58f7e3b678baef83a1a556f3",
-      "import_sha256": "e4a42a2cf6ffc1d351501ba0a20420401d5543a4cd71748e56ec4b37950ea66d"
+      "import_sha256": "d565cf1e44d563e56b185f3584a14f6dfe2f176f3b7d629d889fcd85d641228f"
     },
     {
       "source_path": "frontend/appflowy_flutter/lib/mobile/presentation/home/mobile_home_setting_page.dart",
@@ -9198,7 +9198,7 @@
       "source_path": "frontend/appflowy_flutter/lib/startup/tasks/windows.dart",
       "import_path": "frontend/appflowy_flutter/lib/startup/tasks/windows.dart",
       "upstream_sha256": "4618b7de2389bc10fcd77f63b03fcc3a71f5baf35b8dc6ebeccb3134382bb968",
-      "import_sha256": "3b70fc4fb44cf94fc72230812f54a03062427ae642ffe6581b680c4b5f01ac18"
+      "import_sha256": "d07ff6137dc699ade5f8ccbe2348210d4e28bda3ef897825f16f9da1b87a13a7"
     },
     {
       "source_path": "frontend/appflowy_flutter/lib/user/application/anon_user_bloc.dart",
@@ -11586,7 +11586,7 @@
       "source_path": "frontend/appflowy_flutter/linux/my_application.cc",
       "import_path": "frontend/appflowy_flutter/linux/my_application.cc",
       "upstream_sha256": "3875d2a87da1ce89e9a231bd36e273811b4a084090f9c1f106b920a9bd27937c",
-      "import_sha256": "49ab5dd44a28383b4094fa457be1a29a6541031250acd29d43ae5308b6c28ce8"
+      "import_sha256": "c38b41c93f0a215136b9ed65ee53a7ca03ff76af4e5a6fc1686b04c1fd3fbb91"
     },
     {
       "source_path": "frontend/appflowy_flutter/linux/my_application.h",
@@ -11874,7 +11874,7 @@
       "source_path": "frontend/appflowy_flutter/macos/Runner/Info.plist",
       "import_path": "frontend/appflowy_flutter/macos/Runner/Info.plist",
       "upstream_sha256": "ee3966e77301b9e0b3f537bc0c069873abd128f72e714ea784280bc5975c2b0c",
-      "import_sha256": "3c17b8eb6f93af279a349be52e0020fec194330f1bd90c4f7c5365ef2d6abf2c"
+      "import_sha256": "6a4539cdc7c5f29d936cf4abe549041241701703498b538c715d4f19f9d27c2b"
     },
     {
       "source_path": "frontend/appflowy_flutter/macos/Runner/MainFlutterWindow.swift",
@@ -16098,7 +16098,7 @@
       "source_path": "frontend/appflowy_flutter/pubspec.yaml",
       "import_path": "frontend/appflowy_flutter/pubspec.yaml",
       "upstream_sha256": "e5f327b14395e8e1c1657d4097e6615d822609cb4aebf46bb59876bc279618f0",
-      "import_sha256": "f800c2041ffb0c8731bb396e5aa3200d6ace5670e8bcf45f59bee5ca349aea8c"
+      "import_sha256": "0b8d899fe5cb1ecfb9e771dfefbf95f65e6c96fa2742f5581243b62a0fa0e1c7"
     },
     {
       "source_path": "frontend/appflowy_flutter/test/bloc_test/ai_writer_test/ai_writer_bloc_test.dart",
@@ -16698,13 +16698,13 @@
       "source_path": "frontend/appflowy_flutter/web/index.html",
       "import_path": "frontend/appflowy_flutter/web/index.html",
       "upstream_sha256": "6f1330d22ed51390c8a9c30006491a4c0ad6f3c288e896e1b2b6826970764e11",
-      "import_sha256": "d16439a084131a0d6404c32a58ed78001355b8edf76161dd1b12338f6edd5bc4"
+      "import_sha256": "9592bdce154ba24078fc79f64c791a66d04ac713bf5bb401f3f6ec36704bae1f"
     },
     {
       "source_path": "frontend/appflowy_flutter/web/manifest.json",
       "import_path": "frontend/appflowy_flutter/web/manifest.json",
       "upstream_sha256": "67756130c401eb7504d9bd59cbef9c9bf022bb1459295e4d3ec61ff3f1d20295",
-      "import_sha256": "78dab8a630c2efa45e400b25801cdf70b26b85fa5e0ef5ed8f49a6ada972bf33"
+      "import_sha256": "a7c54ed9c9a4c448ee6c45e6c3b67c4318da653f1f67f7bf1521303d71878dd7"
     },
     {
       "source_path": "frontend/appflowy_flutter/windows/.gitignore",
@@ -16734,7 +16734,7 @@
       "source_path": "frontend/appflowy_flutter/windows/runner/Runner.rc",
       "import_path": "frontend/appflowy_flutter/windows/runner/Runner.rc",
       "upstream_sha256": "b0ba17bd955a439ca13cc8fd1b5f4e6d379a5a308e56c24b5a6f7934b6134ef0",
-      "import_sha256": "a4608c590b3f403d2fd12b287e91c25d6f68dbd5638a722a197e52577c66e06d"
+      "import_sha256": "c0c7797a0c669854e1a7f3c8ed0fc3b14bea5f83faf0337deb6581ba7c34a804"
     },
     {
       "source_path": "frontend/appflowy_flutter/windows/runner/flutter_window.cpp",
@@ -16752,7 +16752,7 @@
       "source_path": "frontend/appflowy_flutter/windows/runner/main.cpp",
       "import_path": "frontend/appflowy_flutter/windows/runner/main.cpp",
       "upstream_sha256": "a2d0291fc9183ef39bcb137a6b3841f64400657b7ade6f05c7729071c8ea9a1d",
-      "import_sha256": "ec3ca9bbae22b7623234034e10d8367ca6b432d936ddd8703e2514f37ae12989"
+      "import_sha256": "ba4656145f83d36965ec9d62bfe24364fbffea4bb652da7b5dab210fd46ec0ca"
     },
     {
       "source_path": "frontend/appflowy_flutter/windows/runner/resource.h",
@@ -27330,7 +27330,7 @@
       "source_path": "frontend/scripts/linux_distribution/deb/AppFlowy.desktop",
       "import_path": "frontend/scripts/linux_distribution/deb/AppFlowy.desktop",
       "upstream_sha256": "7d7894a7f26a2cbac2c1f6ff31dbe60d7ab8c3d75f0bb91a93b1d6d94dd8b5f0",
-      "import_sha256": "fc78461c518757a8c8e0f5be2280316689394633fde3767e7459797dacbd6157"
+      "import_sha256": "6fd186abdff349395c4ccdbf8d33a3ce2fa606c96e3f528498f51a55caa1234d"
     },
     {
       "source_path": "frontend/scripts/linux_distribution/deb/DEBIAN/control",
@@ -27378,7 +27378,7 @@
       "source_path": "frontend/scripts/linux_distribution/packaging/io.appflowy.AppFlowy.launcher.desktop",
       "import_path": "frontend/scripts/linux_distribution/packaging/io.appflowy.AppFlowy.launcher.desktop",
       "upstream_sha256": "24c90485645a09437e629e14269b36266eeda1ffc45ca2e0446f7c2275a391b9",
-      "import_sha256": "030e94bb1081bc1c5c64fb2d1105820f46d6ccc23e75fab30c72feb87d53f8c6"
+      "import_sha256": "49af1ce21ae076d682cc613d1f4e61f159de4dfd40c3be29361ed1069e499ce6"
     },
     {
       "source_path": "frontend/scripts/linux_distribution/packaging/io.appflowy.AppFlowy.metainfo.xml",
