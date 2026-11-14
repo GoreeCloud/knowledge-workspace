@@ -30,6 +30,13 @@ class ProductIdentityTests(unittest.TestCase):
         locale = FLUTTER / "assets/translations/mr-IN.json"
         self.assertEqual(json.loads(locale.read_text())["appName"], DISPLAY)
 
+    def test_linux_native_window_uses_verified_display_name_and_windowed_default(self):
+        source = (FLUTTER / "linux/my_application.cc").read_text()
+        self.assertIn('gtk_window_set_title(window, "' + DISPLAY + '");', source)
+        self.assertIn("gtk_window_set_default_size(window, 1280, 720);", source)
+        self.assertNotIn("gtk_window_maximize(", source)
+        self.assertNotIn("gtk_window_fullscreen(", source)
+
     def test_flutter_test_declares_public_identity(self):
         test = (FLUTTER / "test/goreecloud/workspace_identity_test.dart").read_text()
         self.assertIn("goreeCloudWorkspaceDisplayName", test)
