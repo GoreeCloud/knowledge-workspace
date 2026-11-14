@@ -178,7 +178,7 @@ dependency_overrides:
   url_protocol:
     git:
       url: https://github.com/LucasXu0/flutter_url_protocol.git
-      commit: 737681d
+      ref: 77a84201ed8ca50082f4248f3a373d053b1c0462
 
   appflowy_editor:
     git:
@@ -208,7 +208,7 @@ dependency_overrides:
   flutter_cache_manager:
     git:
       url: https://github.com/LucasXu0/flutter_cache_manager.git
-      commit: fbab857b1b1d209240a146d32f496379b9f62276
+      ref: fbab857b1b1d209240a146d32f496379b9f62276
       path: flutter_cache_manager
 
   flutter_sticky_header: ^0.7.0

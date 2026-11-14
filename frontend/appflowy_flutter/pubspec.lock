@@ -806,7 +806,7 @@ packages:
     dependency: "direct main"
     description:
       path: flutter_cache_manager
-      ref: HEAD
+      ref: fbab857b1b1d209240a146d32f496379b9f62276
       resolved-ref: fbab857b1b1d209240a146d32f496379b9f62276
       url: "https://github.com/LucasXu0/flutter_cache_manager.git"
     source: git
@@ -2375,7 +2375,7 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: HEAD
+      ref: "77a84201ed8ca50082f4248f3a373d053b1c0462"
       resolved-ref: "77a84201ed8ca50082f4248f3a373d053b1c0462"
       url: "https://github.com/LucasXu0/flutter_url_protocol.git"
     source: git
