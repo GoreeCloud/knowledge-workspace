@@ -19,6 +19,8 @@ GoreeCloud Knowledge Workspace is an **AppFlowy-derived** open-source knowledge,
 
 The inherited source includes Flutter client code and Rust components for a multi-platform workspace. Initial **GoreeCloud Knowledge Workspace** display naming is applied to select Android, iOS, macOS, Windows, Linux desktop-entry/window title and web manifest/title surfaces. Internal package IDs, database formats, deep links, binary names and third-party integrations remain at their inherited values pending compatibility review. The upstream graphics and localized application strings may still say AppFlowy.
 
+**Privacy and release notice:** The imported AppFlowy startup update feed and manual Linux download redirect are disabled by default. No verified GoreeCloud release feed or signed update channel is configured; the About panel displays only the locally installed version without claiming it is up to date. Other imported network clients remain unaudited. See [Update source and privacy](docs/UPDATE_SOURCE_PRIVACY.md).
+
 No integrations with GoreeCloud Identity, Mesh, GoreeShield or Wardveil have been implemented or validated by this import. GoreeCloud UI design-token adoption remains future work.
 
 ## Development starting points

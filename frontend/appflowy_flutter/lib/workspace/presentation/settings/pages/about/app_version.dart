@@ -15,9 +15,23 @@ class SettingsAppVersion extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (!versionChecker.hasConfiguredUpdateFeed) {
+      // Never claim the installed version is up to date without a release feed.
+      return _buildLocalVersion(context);
+    }
     return ApplicationInfo.isUpdateAvailable
         ? const _UpdateAppSection()
         : _buildIsUpToDate(context);
+  }
+
+  Widget _buildLocalVersion(BuildContext context) {
+    final theme = AppFlowyTheme.of(context);
+    return Text(
+      ApplicationInfo.applicationVersion,
+      style: theme.textStyle.caption.standard(
+        color: theme.textColorScheme.secondary,
+      ),
+    );
   }
 
   Widget _buildIsUpToDate(BuildContext context) {
