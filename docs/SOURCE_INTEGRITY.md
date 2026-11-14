@@ -4,7 +4,7 @@
 
 ## Scope
 
-The GoreeCloud Knowledge Workspace import was pinned to upstream AppFlowy:
+The GoreeCloud Noteflow import was pinned to upstream AppFlowy:
 
 - Repository: https://github.com/AppFlowy-IO/AppFlowy
 - Branch: main

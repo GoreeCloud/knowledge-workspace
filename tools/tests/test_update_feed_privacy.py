@@ -52,6 +52,7 @@ class UpdateFeedPrivacyTests(unittest.TestCase):
     def test_no_unreviewed_replacement_release_url(self):
         source = read_source("startup/tasks/auto_update_task.dart")
         self.assertNotIn("https://github.com/GoreeCloud/knowledge-workspace/releases", source)
+        self.assertNotIn("https://github.com/GoreeCloud/noteflow/releases", source)
         self.assertNotIn("https://github.com/AppFlowy-IO/", source)
         self.assertNotIn("https://appflowy.com/download", source)
 

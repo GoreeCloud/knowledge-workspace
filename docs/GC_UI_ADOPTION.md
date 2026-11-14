@@ -5,7 +5,7 @@ This project is an AppFlowy-derived Flutter/Rust source import. The founder's Go
 ## Implemented in this change
 
 - One Dart compile-time constant drives the mobile personal-workspace header and desktop window title.
-- The header uses a one-line ellipsis treatment for the deliberately long name.
+- The Noteflow header keeps a one-line ellipsis treatment for narrow screens.
 - The Marathi locale appName field is updated without rewriting neighboring translations.
 - Existing package imports, internal identifiers, storage paths, URL schemes and executable filenames remain unchanged.
 
@@ -26,4 +26,4 @@ Run the lightweight brand-contract tests with:
 Run the Flutter test when a verified Flutter SDK and dependencies are available:
 
     cd frontend/appflowy_flutter
-    flutter test test/goreecloud/workspace_identity_test.dart
+    flutter test test/goreecloud/noteflow_identity_test.dart

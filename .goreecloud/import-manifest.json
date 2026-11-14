@@ -1,5 +1,6 @@
 {
-  "project": "GoreeCloud Knowledge Workspace",
+  "project": "GoreeCloud Noteflow",
+  "previous_project_name": "GoreeCloud Knowledge Workspace",
   "import_type": "attributed source snapshot (rebranded import)",
   "upstream_repository": "https://github.com/AppFlowy-IO/AppFlowy",
   "upstream_ref": "refs/heads/main",
@@ -11,5 +12,5 @@
   "upstream_license_sha256": "8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef",
   "upstream_tracked_files": 4597,
   "upstream_workflows_archived": 12,
-  "status": "development baseline; full rebranding, security review, builds and deployment not yet verified"
+  "status": "development baseline; isolated Linux debug build and bounded virtual-display startup verified; full branding, security and release acceptance remain open"
 }

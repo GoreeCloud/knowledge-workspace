@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:ui';
 
-import 'package:appflowy/goreecloud/workspace_identity.dart';
+import 'package:appflowy/goreecloud/noteflow_identity.dart';
 import 'package:appflowy/startup/startup.dart';
 import 'package:appflowy/startup/tasks/app_window_size_manager.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
@@ -11,7 +11,7 @@ import 'package:window_manager/window_manager.dart';
 import 'package:universal_platform/universal_platform.dart';
 
 class InitAppWindowTask extends LaunchTask with WindowListener {
-  InitAppWindowTask({this.title = goreeCloudWorkspaceDisplayName});
+  InitAppWindowTask({this.title = goreeCloudNoteflowDisplayName});
 
   final String title;
   final windowSizeManager = WindowSizeManager();

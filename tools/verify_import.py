@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = json.loads((ROOT / ".goreecloud/import-manifest.json").read_text())
-BRAND = "GoreeCloud Knowledge Workspace"
+BRAND = "GoreeCloud Noteflow"
 
 def require(condition: bool, message: str) -> None:
     if not condition:
@@ -58,7 +58,7 @@ def main() -> None:
     require(active == ["verify-import.yml"], "inherited automatic workflow execution disabled")
     archived = sorted(p for p in (ROOT / ".github/upstream-workflows-disabled").iterdir() if p.is_file())
     require(len(archived) == MANIFEST["upstream_workflows_archived"] == 12, "upstream workflows archived")
-    print("PASS Import checks complete (static checks only; builds and runtime unverified)")
+    print("PASS Import checks complete (static source checks only; not a release certification)")
 
 if __name__ == "__main__":
     main()
