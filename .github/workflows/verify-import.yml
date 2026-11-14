@@ -34,6 +34,8 @@ jobs:
         run: python3 tools/generated_source_preflight.py --json
       - name: Report missing Linux FFI and bundle build prerequisites
         run: python3 tools/check_linux_ffi_bundle.py --json
+      - name: Check Dart FFI exported-symbol source contract
+        run: python3 tools/check_linux_ffi_exports.py --json
       - name: Verify reviewed static HTTP(S) hostname references
         run: python3 tools/network_reference_audit.py verify
       - name: Verify source-integrity and product identity contracts

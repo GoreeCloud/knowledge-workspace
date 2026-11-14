@@ -39,9 +39,10 @@ The full application build progressed through the Linux native plugin configurat
 
 The Linux CMake source requires linux/flutter/dart_ffi/libdart_ffi.so
 and bundles that file alongside Flutter's libflutter_linux_gtk.so. The imported
-frontend/rust-lib/dart-ffi/Cargo.toml currently specifies staticlib, so a
-reviewed scratch-only shared-library adaptation is required before installing
-or launching the Linux bundle. Do not silently alter its Cargo manifest.
+frontend/rust-lib/dart-ffi/Cargo.toml now declares both staticlib and cdylib
+so the existing static-library consumers remain supported while Linux can obtain
+a compatible libdart_ffi.so. This source declaration alone does not compile,
+validate, stage, package, or sign the native library.
 
 Inspect the source contract and the required native file without executing ELF:
 
@@ -54,3 +55,26 @@ that the executable, native FFI and Flutter GTK libraries, and Flutter asset
 directory are structurally present. This is not an exported-symbol, ABI,
 dynamic-dependency, security, network, privacy or license attestation.
 Use an isolated native-library audit and runtime validation before release.
+
+
+To produce the Linux-native FFI artifact safely, use the reviewed Rust toolchain
+and pinned Cargo.lock in an isolated network-disabled, disposable workspace.
+Build the dart-ffi library target, inspect its ELF dynamic symbols and loader
+requirements, then stage only the verified library in the disposable app at
+linux/flutter/dart_ffi/libdart_ffi.so before invoking the inherited Linux
+CMake install. The original imported CMake still controls installation of the
+shared library into the bundle; do not edit live system library directories.
+This documented path remains a development flow, not a release certification.
+
+The read-only ABI cross-check identifies the nine C function exports referenced
+by the imported Dart bindings. In CI, validate just the source-level contract:
+
+    python3 tools/check_linux_ffi_exports.py --json
+
+After building a disposable Linux shared library, inspect its dynamic symbols
+without executing it:
+
+    python3 tools/check_linux_ffi_exports.py --library /path/to/libdart_ffi.so --json
+
+A passing dynamic-symbol scan does not verify function type compatibility or
+safe runtime behavior; those remain separate tests.

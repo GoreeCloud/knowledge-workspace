@@ -21804,7 +21804,7 @@
       "source_path": "frontend/rust-lib/dart-ffi/Cargo.toml",
       "import_path": "frontend/rust-lib/dart-ffi/Cargo.toml",
       "upstream_sha256": "d6fb1e213a6abbf040803fb92b55d36cdb9e7cc361cff68928d1637c748de3c8",
-      "import_sha256": "d6fb1e213a6abbf040803fb92b55d36cdb9e7cc361cff68928d1637c748de3c8"
+      "import_sha256": "8f88f78e0075946eaead3a91b8051174514f15f27692dd5e48403302b0458d61"
     },
     {
       "source_path": "frontend/rust-lib/dart-ffi/Flowy.toml",
