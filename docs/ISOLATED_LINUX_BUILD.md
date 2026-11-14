@@ -1,6 +1,6 @@
 # Isolated Linux build acceptance — imported Knowledge Workspace
 
-**Status: controlled build investigation, not production release acceptance.** This AppFlowy-derived source lacks generated Dart parts and Rust-backed bindings by default. Rootless dependency acquisition and network-disabled compilation have been tested, but no complete Knowledge Workspace desktop executable has been verified.
+**Status: controlled Linux debug build and isolated window startup verified; no production release acceptance.** This imported source omits generated Dart and Rust-backed inputs by default; those were produced in a reviewed disposable workspace. Other platforms, feature behavior and production readiness remain unverified.
 
 ## Inspect generated source requirements
 
@@ -33,7 +33,7 @@ An isolated Dart acquisition completed with the original lockfile. All **294** h
 
 The full application build progressed through the Linux native plugin configuration and Dart compiler, but failed on missing generated sources. The SVG and localization generators generated three Dart files in scratch, and the official Protobuf plugin version **21.1.2**, specified by the inherited build script, passed a network-isolated protoc smoke test. Rust 1.85.0 successfully compiled an isolated flowy-ast target and a narrowly scoped first-party flowy-error protobuf generator; the latter wrote nine backend Dart files in scratch. A bounded all-package Freezed generator attempt processed thousands of actions but did not finish or commit output files before timeout.
 
-**No complete application binary has been built, launched, signed or deployed.** None of these checks proves that third-party source is free of malware, license-compatible, or that GoreeCloud privacy and security policies have been enforced in the imported application.
+**Historical checkpoint:** At this earlier stage no complete application binary had been built, launched, signed or deployed. A subsequent isolated Linux debug build and virtual-display launch are documented below. These metadata checks alone do not establish third-party safety, licensing, or GoreeCloud privacy/security requirements.
 
 ## Linux native-library acceptance before launch
 
@@ -78,3 +78,48 @@ without executing it:
 
 A passing dynamic-symbol scan does not verify function type compatibility or
 safe runtime behavior; those remain separate tests.
+
+
+## Verified Linux debug build and isolated window — November 13, 2026
+
+An actual imported Flutter/Linux desktop application was assembled in disposable
+user-owned storage with Flutter 3.27.4, Dart 3.6.2 and Rust 1.85.0. The real
+desktop session, home directory, account credentials and devices were not
+mounted. Dependency acquisition was separate from compilation. Generation,
+Cargo, CargoKit, Flutter and CMake/Ninja built with network disabled in rootless
+Podman, a read-only container root, dropped capabilities, no-new-privileges and
+resource caps. A scratch-only reviewed CargoKit launcher clone added offline
+Pub resolution and disabled precompiled downloads. The original cached plugin
+source was preserved.
+
+- Root Dart generation created 582 outputs across 8,482 actions.
+  The strict generated-source scanner found zero missing references across
+  2,184 Dart files.
+- Locked, offline Rust FFI compilation (24m 12s) produced an ELF64 x86_64
+  shared library of 285,777,816 bytes. SHA-256:
+  b061f6f891d94dd4c329d6ce8c3d7b04794dfb1d6e981eff869ae1bfddc5186e.
+  All nine required Dart-referenced C exports were present. The FFI shared
+  library contains no embedded RPATH/RUNPATH.
+- The full Flutter Linux debug build and CMake/Ninja install succeeded,
+  producing a 1,160-file development bundle of approximately 484 MiB with
+  the inherited AppFlowy executable name, Flutter assets, GTK, FFI and
+  plugin shared libraries. Strict structural bundle checks passed.
+  Direct DT_NEEDED dependencies of the runner and 15 packaged shared
+  libraries had zero unresolved library names in inspected search paths.
+- A separate rootless, network-disabled Xvfb runtime with an empty disposable
+  home opened a 1280x960 window titled GoreeCloud Knowledge Workspace.
+  The executable and some X11 class identifiers retain upstream AppFlowy
+  names. In the intentionally minimal container without system D-Bus, the
+  initial run logged two unhandled connectivity-related SocketExceptions.
+  A follow-up bounded, no-network Xvfb launch on November 14 with a Linux
+  D-Bus availability guard logged its fallback once, showed the same branded
+  window, stayed alive and had zero unhandled Dart or socket exceptions.
+  The normal NetworkManager service path was not exercised. Fontconfig,
+  ATK and GDK warnings remain in the artificial display environment.
+
+**Development evidence only, not signed or deployable.** No binary was
+published, installed in the user's profile or deployed to a server. Real
+accounts/data, accessibility, UI/Identity/Mesh integration, privacy/security,
+licensing and third-party execution risk remain subject to later acceptance.
+The fact that this build and smoke test denied egress does not prove the app
+independently enforces privacy.

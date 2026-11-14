@@ -4,31 +4,64 @@ import 'package:appflowy_backend/dispatch/dispatch.dart';
 import 'package:appflowy_backend/log.dart';
 import 'package:appflowy_backend/protobuf/flowy-user/user_setting.pb.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:flutter/services.dart';
+
+import 'network_monitor_bus_stub.dart'
+    if (dart.library.io) 'network_monitor_bus_io.dart' as system_bus;
 
 class NetworkListener {
   NetworkListener() {
-    _connectivitySubscription =
-        _connectivity.onConnectivityChanged.listen(_updateConnectionStatus);
+    // The Linux plugin starts a D-Bus signal stream immediately upon listen.
+    // Without a system bus that internal asynchronous connect can fail outside
+    // our stream onError handler. Preserve monitoring on supported desktops.
+    if (!_systemMonitorAvailable) {
+      return;
+    }
+    _connectivitySubscription = _connectivity.onConnectivityChanged.listen(
+      (result) => unawaited(_updateConnectionStatusSafely(result)),
+      // Linux can have no system D-Bus (for example a minimal sandbox).
+      // An absent monitor is not a reason to abort application startup.
+      onError: (Object error, StackTrace stackTrace) {
+        Log.error('Connectivity stream unavailable: ${error.runtimeType}');
+      },
+    );
   }
 
   final Connectivity _connectivity = Connectivity();
-  late StreamSubscription<ConnectivityResult> _connectivitySubscription;
+  final bool _systemMonitorAvailable = system_bus.networkStatusMonitorSupported;
+  StreamSubscription<ConnectivityResult>? _connectivitySubscription;
 
   Future<void> start() async {
-    late ConnectivityResult result;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      result = await _connectivity.checkConnectivity();
-    } on PlatformException catch (e) {
-      Log.error("Couldn't check connectivity status. $e");
+    if (!_systemMonitorAvailable) {
+      Log.info('Linux connectivity monitor unavailable; skipping D-Bus checks');
       return;
     }
-    return _updateConnectionStatus(result);
+    try {
+      final result = await _connectivity.checkConnectivity();
+      await _updateConnectionStatusSafely(result);
+    } on Exception catch (error) {
+      // Includes PlatformException and the missing D-Bus SocketException.
+      // Log only its type rather than exposing connection details.
+      Log.error('Connectivity check unavailable: ${error.runtimeType}');
+    }
   }
 
   Future<void> stop() async {
-    await _connectivitySubscription.cancel();
+    final subscription = _connectivitySubscription;
+    if (subscription != null) {
+      await subscription.cancel();
+      _connectivitySubscription = null;
+    }
+  }
+
+  Future<void> _updateConnectionStatusSafely(
+    ConnectivityResult result,
+  ) async {
+    try {
+      await _updateConnectionStatus(result);
+    } on Exception catch (error) {
+      // Stream callbacks must handle errors from asynchronous SDK dispatch.
+      Log.error('Connectivity status update failed: ${error.runtimeType}');
+    }
   }
 
   Future<void> _updateConnectionStatus(ConnectivityResult result) async {

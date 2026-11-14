@@ -2622,7 +2622,7 @@
       "source_path": "frontend/appflowy_flutter/lib/core/network_monitor.dart",
       "import_path": "frontend/appflowy_flutter/lib/core/network_monitor.dart",
       "upstream_sha256": "7540f71846dfec538c64b843777e30072776187e7fd5ace39354228915bc8684",
-      "import_sha256": "7540f71846dfec538c64b843777e30072776187e7fd5ace39354228915bc8684"
+      "import_sha256": "6a669f892dbd9eb42c668075148021bfbd8b9a5a083c9ce9183b9c90c880d094"
     },
     {
       "source_path": "frontend/appflowy_flutter/lib/core/notification/document_notification.dart",
